@@ -11,8 +11,8 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET(BASE_URL)
-    fun getAbbreviation(@Query(SF) sf: String): Call<ArrayList<ResponseService>>
+    fun getAbbreviation(@Query(SF) sf: String?): Call<ArrayList<ResponseService>>
 
     @GET(BASE_URL)
-    fun getFullForms(@Query(LF) lf: String): Call<ArrayList<ResponseService>>
+    fun getFullForms(@Query(LF) lf: String?): Call<ArrayList<ResponseService>>
 }

@@ -9,11 +9,12 @@ import retrofit2.Response
 
 @ActivityRetainedScoped
 class MainActivityRepository(private val apiInterface: ApiInterface) : IMainActivityRepository {
-    override fun getResponseR(
-        response: (ResponseService?) -> Unit,
+    override fun getAbbreviationR(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
         error: (String?) -> Unit
     ) {
-        val call = apiInterface.getAbbreviation("HMM")
+        val call = apiInterface.getAbbreviation(textToFind)
         call.enqueue(object : Callback<ArrayList<ResponseService>> {
             override fun onFailure(
                 call: Call<ArrayList<ResponseService>>,
@@ -26,8 +27,30 @@ class MainActivityRepository(private val apiInterface: ApiInterface) : IMainActi
                 call: Call<ArrayList<ResponseService>>,
                 responseService: Response<ArrayList<ResponseService>>
             ) {
-                //response(responseService.body() as ArrayList<ResponseService>)
-                responseService.body()
+                responseService.body()?.let { response(it) }
+            }
+        })
+    }
+
+    override fun getFullFormsR(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
+        error: (String?) -> Unit
+    ) {
+        val call = apiInterface.getFullForms(textToFind)
+        call.enqueue(object : Callback<ArrayList<ResponseService>> {
+            override fun onFailure(
+                call: Call<ArrayList<ResponseService>>,
+                t: Throwable
+            ) {
+                error(t.message.toString())
+            }
+
+            override fun onResponse(
+                call: Call<ArrayList<ResponseService>>,
+                responseService: Response<ArrayList<ResponseService>>
+            ) {
+                responseService.body()?.let { response(it) }
             }
         })
     }

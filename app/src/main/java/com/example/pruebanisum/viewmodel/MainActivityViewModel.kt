@@ -10,10 +10,19 @@ import javax.inject.Inject
 class MainActivityViewModel @Inject constructor(private val mainActivityRepository: IMainActivityRepository) :
     ViewModel() {
 
-    fun getResponseV(
-        response: (ResponseService?) -> Unit,
+    fun getAbbreviationV(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
         error: (String?) -> Unit
     ) {
-        mainActivityRepository.getResponseR({ response(it) }, { error(it) })
+        mainActivityRepository.getAbbreviationR(textToFind, { response(it) }, { error(it) })
+    }
+
+    fun getFullFormsV(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
+        error: (String?) -> Unit
+    ) {
+        mainActivityRepository.getFullFormsR(textToFind, { response(it) }, { error(it) })
     }
 }

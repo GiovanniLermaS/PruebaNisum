@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RetrofitClient() {
+class RetrofitClient {
 
     private val cacheSize = (5 * 1024 * 1024).toLong()
 

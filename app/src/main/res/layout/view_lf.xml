@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp">
+
+    <TextView
+        android:id="@+id/tvLf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:gravity="center"
+        android:text="lf"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvFreq"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTextLf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvLf"
+        app:layout_constraintStart_toStartOf="@+id/tvLf"
+        app:layout_constraintTop_toBottomOf="@+id/tvLf"
+        tools:text="lf" />
+
+    <TextView
+        android:id="@+id/tvFreq"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="freq"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvSince"
+        app:layout_constraintStart_toEndOf="@+id/tvLf"
+        app:layout_constraintTop_toTopOf="@+id/tvLf" />
+
+    <TextView
+        android:id="@+id/tvTextFreq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvFreq"
+        app:layout_constraintStart_toStartOf="@+id/tvFreq"
+        app:layout_constraintTop_toBottomOf="@+id/tvFreq"
+        tools:text="freq" />
+
+    <TextView
+        android:id="@+id/tvSince"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="since"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFreq"
+        app:layout_constraintTop_toTopOf="@+id/tvFreq" />
+
+    <TextView
+        android:id="@+id/tvTextSince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSince"
+        app:layout_constraintStart_toStartOf="@+id/tvSince"
+        app:layout_constraintTop_toBottomOf="@+id/tvSince"
+        tools:text="since" />
+</androidx.constraintlayout.widget.ConstraintLayout>

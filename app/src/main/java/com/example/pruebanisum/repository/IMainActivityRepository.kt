@@ -4,8 +4,15 @@ import com.example.pruebanisum.db.model.ResponseService
 
 interface IMainActivityRepository {
 
-    fun getResponseR(
-        response: (ResponseService?) -> Unit,
+    fun getAbbreviationR(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
+        error: (String?) -> Unit
+    )
+
+    fun getFullFormsR(
+        textToFind: String?,
+        response: (ArrayList<ResponseService>) -> Unit,
         error: (String?) -> Unit
     )
 }
