@@ -1,8 +1,8 @@
 package com.example.pruebanisum.db.model
 
 class Lf {
-    val lf: String? = null
-    val freq: Int? = null
-    val since: Int? = null
+    var lf: String? = null
+    var freq: Int? = null
+    var since: Int? = null
     val vars = ArrayList<Lf>()
 }
